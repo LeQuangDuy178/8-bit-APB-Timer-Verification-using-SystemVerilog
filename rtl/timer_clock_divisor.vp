@@ -1,0 +1,10 @@
+//-------------------------------------------timer_clocl_divisor.vp----------------------------
+// Capable of executing clock division from register instruction
+
+module timer_clock_divisor(presetn, ker_clk, clkdiv, clkout);
+
+    `protected
+    // The RTL Design file is encrypted for security purpose
+    `endprotected
+
+endmodule

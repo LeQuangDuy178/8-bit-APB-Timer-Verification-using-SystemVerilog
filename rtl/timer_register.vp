@@ -1,0 +1,14 @@
+//-------------------------------------------timer_register.vp----------------------------
+// Capable of proceeding proper instructions based on according APB transaction transfer
+
+module timer_register(// APB Port List
+                       pclk, presetn, pwrite, psel, penable, pready, paddr, pwdata, prdata
+                       // To/From Internal Module
+                       clkdiv, load, count_down, timer_en, udf, ovf, s_udf, s_ovf, reg_TDR, underflow_en, overflow_en
+                       );
+
+    `protected
+    // The RTL Design file is encrypted for security purpose
+    `endprotected
+
+endmodule

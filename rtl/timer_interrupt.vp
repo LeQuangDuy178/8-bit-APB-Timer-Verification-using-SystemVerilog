@@ -1,0 +1,10 @@
+//-------------------------------------------timer_interrupt.vp----------------------------
+// Capable of executing interrupt for underflow/overflow flag from register instruction
+
+module timer_interrupt(udf, ovf, underflow_en, overflow_en, interrupt);
+
+    `protected
+    // The RTL Design file is encrypted for security purpose
+    `endprotected
+
+endmodule

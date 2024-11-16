@@ -1,0 +1,10 @@
+//-------------------------------------------timer_counter.vp----------------------------
+// Capable of executing timer counter (count up/down) from register instruction
+
+module timer_counter(pclk, presetn, clk_in, load, count_down, timer_en, s_ovf, s_udf, reg_TDR);
+
+    `protected
+    // The RTL Design file is encrypted for security purpose
+    `endprotected
+
+endmodule
