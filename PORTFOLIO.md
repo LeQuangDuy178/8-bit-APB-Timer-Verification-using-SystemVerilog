@@ -37,3 +37,9 @@ Section 2: Building Testbench Environment
 + In driver, the packet are extracted for the driver to drive the appropriate pin-level signals to the DUT via the virtual interface received from test environment.
 + The actual pin-level behaviors of the system are then captured and observed by the monitor which then translate them to the transaction level data packet to send to the scoreboard through mailbox.
 + In scoreboard, it performs various task to analyze the received transaction defined by the user such as data integrity check, error check, data comparison, or functional coverage analysis.
+- More details of the components description are explained in the "tb" folder. 
+
+-------------------------------------------------------------------------------------------------------
+Section 3: Testcases Implementation
+
+3.1/ Verification Plan development:
