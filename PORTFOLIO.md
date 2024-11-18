@@ -1,7 +1,7 @@
 # 8-bit APB Timer Verification using SystemVerilog
  SystemVerilog Testbench to verify 8-bit Timer with APB Transaction
 
---------------------------------------------Project Portfolio-------------------------------------------------------------
+--------------------------------------------Project Portfolio-----------------------------------------------------------------
 This project is part of the preserved ICTC course "Design Verification - SystemVerilog UVM" instructed by Mr. Huy Nguyen
 
 -------------------------------------------------------------------------------------------------------
