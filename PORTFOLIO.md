@@ -14,3 +14,9 @@ Section 1: Project Specification
 ![image](https://github.com/user-attachments/assets/4ca8a00d-c61b-42c7-8374-6786f4e45880)
 ![image](https://github.com/user-attachments/assets/a9396a0e-2261-4add-950c-cca6c0e7d9c9)
 
+1.2/ Understand the APB bus transaction:
+- The main protocol use for the transaction packet sending to and getting from the DUT is the APB bus, consisting of its global signals pclk and presetn; the set of control signals psel, penable and pwrite; actual transfer data paddr, pwdata for write transfer and output prdata from the slave for read transfer. Details of the signals are shown as below:
+![image](https://github.com/user-attachments/assets/3e6e71c2-0e2e-493b-81b3-ac8cd9900c7b)
+- In this project, the single APB transaction will require 2 completed periods of pclk (excluding wait state), in which the 1st phase asserts the psel and pwrite depending on transfer type, and the 2nd phase asserts the penable such that the system is ready to access the data. It is highly required that the address and write/read data should be kept stable during the entire transfer. The APB transaction prototype on waveform is illustrated as below:
+![image](https://github.com/user-attachments/assets/cb675786-a80c-4215-b49b-4ef8f32a7196)
+
