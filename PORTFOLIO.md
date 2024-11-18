@@ -20,3 +20,4 @@ Section 1: Project Specification
 - In this project, the single APB transaction will require 2 completed periods of pclk (excluding wait state), in which the 1st phase asserts the psel and pwrite depending on transfer type, and the 2nd phase asserts the penable such that the system is ready to access the data. It is highly required that the address and write/read data should be kept stable during the entire transfer. The APB transaction prototype on waveform is illustrated as below:
 ![image](https://github.com/user-attachments/assets/cb675786-a80c-4215-b49b-4ef8f32a7196)
 
+Section 2: Building Testbench Environment
