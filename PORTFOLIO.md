@@ -3,7 +3,7 @@
 
 --------------------------------------------Project Portfolio-----------------------------------------------------------------
 
-This project is part of the preserved ICTC course "Design Verification - SystemVerilog UVM" instructed by Mr. Huy Nguyen
+This project is part of the preserved ICTC course "Design Verification - SystemVerilog UVM" by Mr. Huy Nguyen
 
 -------------------------------------------------------------------------------------------------------
 Section 1: Project Specification
