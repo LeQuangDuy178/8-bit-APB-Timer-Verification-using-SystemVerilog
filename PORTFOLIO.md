@@ -43,3 +43,37 @@ Section 2: Building Testbench Environment
 Section 3: Testcases Implementation
 
 3.1/ Verification Plan development:
+- The Verification Plan is a crucial sheet for every large Design Verification project, where it lists out all the items, possible testcase scenarios that need to be verified, with detail descriptions such as milestone, passed/failed condition, status, etc. While it is highly understandable that there might be some potential conrner cases that are missed, the verification plan should help ensure that most of the cases are reviewed and exercised adequetely.
+- Particular in this project, the Verification strategy should be analyized as followed:
++ Test the system behavior with default transaction for either read and write transfer.
++ Test particular register's behavior based on associated APB bus, which is count up/down, clock division, load data from TDR, underflow/overflow polling and interrupt trigger. It is highly recommended that the tests should be created directly, rather randomization since the direct cases are addressed.
++ Perform some directed combined tests, in which the DUT will receive 2 to 3 different instruction sets from register to exercise some combination of behavior in one performance. For instance, users can apply TDR loading data to TCR, then set the clock division to 8, then perform count up from the TDR data, with overflow interrupt enable so that as the count up data exceeds 255 as a 8-bit scale, the interrupt should be triggered the same as overflow polling signal.
++ Lastly, it is crucial to perform a preferrable amount of randomized test with appropriate constraints, this help the system to perform randomly so that potential hidden bugs can be detected if it is occered, either from RTL or the testbench itself. However, perform randomized tests require a high level of knowledge and understand of not only the testbench structure but also the specification of the RTL design, as well as adaptable experiences to troubleshooting unexpected bugs.
+- Details of testcases needed for testing the behavior of the 8-bit Timer system is shown in "8-bit Timer Vplan_Le Quang Duy.csv" file.
+- See folder testcases to see the description of specific testcases.
+
+-------------------------------------------------------------------------------------------------------
+Section 4: Simulation performance and Results observation
+
+4.1/ Simulation results:
+- The simulation results for every defined testcases listed in the Verification Plan can be obeserved in the waveforms in the result folder. The waveforms are created using Questa simulation tool.
+- To perform specific testcases, type "make TESTNAME="test_name"" in the sim directory, this will request the operating system environment to compile all of the codes within the environment and run the defined test name with vsim tool.
+- To perform specific testcases without recompile the code, perform "make build" to compile the environment once, and then perform "make run TESTNAME="test_name"" to execute the performance of specific test scenarios.
+- See Makefile for more details.
+
+4.2/ Regression running:
+- To increase the effectiveness of the simulation process, the regression concept is introduced by perform the same strategy: compiling once, run multiple times. In this regression running, as user run the regress.pl Perl script, the system will compile the environment and run all the listed testcases in the regress.cfg file (the tc_list{}).
+- In addition, the user can view the status of the tests as the script also generates the report file regress.rpt show the details of simulation and its result at the end of the simulation.
+- See regress.cfg and regress.pl for more details.
+- The report file should show the results same as below:
+![image](https://github.com/user-attachments/assets/86f20194-f376-4e85-ac3b-655a20062d7c)
+
+-------------------------------------------------------------------------------------------------------
+Section 5: Project reflection and improvement
+
+5.1/ Project reflection:
+- Overall, the project is designed to help understand how the 8-bit Timer DUT works, how the testbench structure in SystemVerilog should be built to verify the system, how testcases can be created to address all of the scenarios can be occured during real-life operation with the assistance of verification plan, and additionally the APB protocol knowledge.
+
+5.2/ Improvement:
+- Using the pure SystemVerilog testbench is limited by its flexibility, and more importantly, the reusability. This testbench environment is unable to be reused in future project or need many adjustments, where the 8-bit Timer DUT might be inserted into another Subsystem or SoC.
+- To address that problem, the UVM is introducted, with the advancement in creating effective and resuable testbench environment.
